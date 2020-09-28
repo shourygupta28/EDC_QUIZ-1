@@ -1,11 +1,21 @@
 from django.shortcuts import render
-from .models import Questions
+from .forms import AnswerForm
+from .models import Questions, Answer
 
-# Create your views here.
 def question(request):
-    ques = Questions.objects.filter(slot=1).order_by(ques_no)
+    ques = Questions.objects.filter(slot=2).order_by("ques_no")
 
-    context = {
-        'ques':ques,
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            f = form.save()
+            f.candidate = 'hellohelllo'
+            f.save()
+
+    context = { 
+        'form':AnswerForm(),
+        'questions':ques,
     }
+    
+    print(Answer.objects.all())
     return render(request, 'questions/index.html', context)
