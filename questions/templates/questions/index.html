@@ -5,10 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>EDC Quiz</title>
+    
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script>
         $(document).ready(function () {
             $(".hamburger").click(function () {
@@ -16,6 +20,7 @@
             });
         });
     </script>
+
     <style>
         textarea{
             width: 100%;
@@ -23,6 +28,16 @@
             border-bottom: 2px solid black;
             outline: none;
             font-size: 18px;
+        }
+        .question-section{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .light{
+            color: #4360b5 !important;
         }
         @media only screen and (max-width: 771px){
             h3{
@@ -51,25 +66,23 @@
                 padding: 0.5rem 0 0.5rem 0;
             }
         }
-        .question-section{
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
     </style>
+
 </head>
 
 <body>
-
+    
     <div class="wrapper">
+        <!-- Navbar -->
         <div class="top_navbar">
+            <!-- Hamburger Icon -->
             <div class="hamburger">
                 <div class="one"></div>
                 <div class="two"></div>
                 <div class="three"></div>
             </div>
+
+            <!-- Hi User and Timer -->
             <div class="top_menu">
                 <h3>Hi Tanya!</h3>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -101,73 +114,69 @@
 
         <div class="sidebar" style="overflow-y: auto; padding-bottom: 5rem">
             <ul>
-                <li><a href="#q1">
+                <li id="title1"><a href="#q1">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 1</span></a></li>
-                <li><a href="#q2">
+                <li id="title2"><a href="#q2">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 2</span>
                     </a></li>
-                <li><a href="#q3">
+                <li id="title3"><a href="#q3">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 3</span>
                     </a></li>
-                <li><a href="#q4">
+                <li id="title4"><a href="#q4">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 4</span>
                     </a></li>
-                <li><a href="#q5">
+                <li id="title5"><a href="#q5">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 5</span>
                     </a></li>
-                <li><a href="#q6">
+                <li id="title6"><a href="#q6">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 6</span>
                     </a></li>
-                <li><a href="#q7">
+                <li id="title7"><a href="#q7">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 7</span>
                     </a></li>
-                <li><a href="#q8">
+                <li id="title8"><a href="#q8">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 8</span>
                     </a></li>
-                <li><a href="#q9">
+                <li id="title9"><a href="#q9">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 9</span>
                     </a></li>
-                <li><a href="#q10">
+                <li id="title10"><a href="#q10">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 10</span>
                     </a></li>
-                <li><a href="#q11">
+                <li id="title11"><a href="#q11">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 11</span>
                     </a></li>
-                <li><a href="#q12">
+                <li id="title12"><a href="#q12">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 12</span>
                     </a></li>
-                <li><a href="#q13">
+                <li id="title13"><a href="#q13">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 13</span>
                     </a></li>
-                <li><a href="#q14">
+                <li id="title14"><a href="#q14">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 14</span>
                     </a></li>
-                <li><a href="#q15">
+                <li id="title15"><a href="#q15">
                         <span class="icon"><i class="fas fa-lightbulb"></i></span>
                         <span class="title">Question 15</span>
                     </a></li>
             </ul>
         </div>
-        <style>
-            .light{
-                color: #4360b5 !important;
-            }
-        </style>
 
+        <!-- Questions -->
         <div class="main_container">
             <form method="POST">
                 {% csrf_token %}
@@ -204,6 +213,9 @@
                                 {% endif %}
                                 {% if question.has_next %}
                                     <a href="#q{{ question.has_next }}" class="btn btn-primary">Next</a>
+                                {% endif %}
+                                {% if question.ques_no == 15 %}
+                                    <input type="submit" class="btn btn-primary">Submit</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -247,6 +259,10 @@
                 this.checked = false;
             }
             this.previous = this.checked;
+
+            var index = '#title' + this.name.substring(6);
+            $(index).css("background-color", "green");
+            $(index + ' span').css("color", "white");
         });
     </script>
 

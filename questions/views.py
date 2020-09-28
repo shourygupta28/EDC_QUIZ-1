@@ -3,7 +3,7 @@ from .forms import AnswerForm
 from .models import Questions, Answer
 
 def question(request):
-    ques = Questions.objects.filter(slot=2).order_by("ques_no")
+    ques = Questions.objects.filter(slot=1).order_by("ques_no")
 
     if request.method == 'POST':
         form = AnswerForm(request.POST)
