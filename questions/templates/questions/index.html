@@ -231,7 +231,7 @@
                             </div>
 
                             <div class="ques">
-                                <textarea type="text" rows="5" name="answer{{ question.ques_no }}"></textarea>
+                                <textarea id="txt{{ question.ques_no }}" type="text" rows="5" name="answer{{ question.ques_no }}"></textarea>
                             </div>
                             <div class="pt-2" style="display: inline-block;">
                                 {% if question.has_prev %}
@@ -264,6 +264,21 @@
             $(index).css("background-color", "green");
             $(index + ' span').css("color", "white");
         });
+
+        {% for question in questions %}
+            $("#txt{{ question.ques_no }}").blur(function(){
+            var index = '#title' + this.name.substring(6);
+            if($(this).val()!="")
+            {
+                $(index).css("background-color", "green");
+                $(index + ' span').css("color", "white");
+            }
+            else{
+                $(index).css("background-color", "#F8F9FA");
+                $(index + ' span').css("color", "#7aaba8");
+            }
+            });
+        {% endfor %}
     </script>
 
 </body>
