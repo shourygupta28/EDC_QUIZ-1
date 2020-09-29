@@ -51,9 +51,3 @@ class Answer(models.Model):
     def __str__(self):
         return self.candidate + " - " + self.answer1 + " - " + self.answer2
 
-
-# class User(models.Model):
-#     email 				= models.EmailField(verbose_name='Email Address')
-# 	name 				= models.CharField(max_length=50)
-#     slot                = models.IntegerField(max_length=1)
-
