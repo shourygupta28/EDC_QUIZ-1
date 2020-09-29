@@ -9,7 +9,7 @@ def question(request):
         form = AnswerForm(request.POST)
         if form.is_valid():
             f = form.save()
-            f.candidate = 'hellohelllo'
+            f.candidate = request.user
             f.save()
 
     context = { 
