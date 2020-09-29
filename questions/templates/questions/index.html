@@ -178,7 +178,7 @@
 
         <!-- Questions -->
         <div class="main_container">
-            <form method="POST">
+            <form id="form" method="POST">
                 {% csrf_token %}
                 {% for question in questions %}
                     {% if question.ques_type == "MCQ" %}
