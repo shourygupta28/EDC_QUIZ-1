@@ -15,9 +15,11 @@ def question(request):
     if request.method == 'POST':
         form = AnswerForm(request.POST)
         if form.is_valid():
-            f = form.save()
-            f.candidate = request.user
-            f.save()
+            # f = form.save()
+            # f.candidate = request.user
+            form.instance.candidate = request.user
+            form.save()
+            return render(request, 'home/ThankYou.html')
 
     context = { 
         'form': AnswerForm(),
