@@ -228,3 +228,7 @@ h3, h4{
     border-color: #afe0dd;
     box-shadow: 0 8px 15px rgba(146, 166, 226, 0.2);
 }
+
+.sidebar ul .color_change {
+  background-color: green;
+}

@@ -103,9 +103,11 @@
                         if (minutes < "10") { minutes = "0" + minutes; }
                         if (seconds < "10") { seconds = "0" + seconds; }
                         document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
-                        if (t < 0) {
+                        if (t <= 0) {
+                            document.getElementById("form_submit").submit();
                             clearInterval(x);
                             document.getElementById("demo").innerHTML = "EXPIRED";
+                            return
                         }
                     }, 1000); 
                 </script>
@@ -178,7 +180,7 @@
 
         <!-- Questions -->
         <div class="main_container">
-            <form method="POST">
+            <form id="form_submit" method="POST">
                 {% csrf_token %}
                 {% for question in questions %}
                     {% if question.ques_type == "MCQ" %}
@@ -257,12 +259,17 @@
         $('input[type=radio]').click(function () {
             if (this.previous) {
                 this.checked = false;
+                var index = '#title' + this.name.substring(6);
+                $(index).css("background-color", "#F8F9FA");
+                $(index + ' span').css("color", "#7aaba8");
             }
             this.previous = this.checked;
+            if(this.checked) {
+                var index = '#title' + this.name.substring(6);
+                $(index).css("background-color", "green");
+                $(index + ' span').css("color", "white");
+            }
 
-            var index = '#title' + this.name.substring(6);
-            $(index).css("background-color", "green");
-            $(index + ' span').css("color", "white");
         });
 
         {% for question in questions %}
