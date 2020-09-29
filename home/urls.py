@@ -7,7 +7,7 @@ from .views import instructions, thankyou, generate_user, destroy_user
 from questions import views as ques_view
 
 urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(template_name='home/login.html')),
+    path('login/', auth_views.LoginView.as_view(template_name='home/login.html'), name='login'),
     path('instructions/', instructions, name='instructions'),
     path('thank-you/', thankyou, name='thank-you'),
     path('questions/', ques_view.question, name='questions'),
