@@ -24,7 +24,7 @@ def question(request):
     context = { 
         'form': AnswerForm(),
         'questions': ques,
-        'end_time': (request.user.start_time + datetime.timedelta(minutes=1)).strftime("%B %d, %Y %H:%M:%S")
+        'end_time': (request.user.start_time + datetime.timedelta(minutes=15)).strftime("%B %d, %Y %H:%M:%S")
     }
     
     print(request.user.start_time, context['end_time'])
