@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Thank You</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500;1,600;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+
+    <style>
+        .thank-you-message{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        @media only screen and (max-width:600px){
+            .thank-you-message{ 
+                font-size: 1.2em;
+            }
+        }
+        .thank-you-section{
+            background-image: url('./images/thankyou.png');
+            background-repeat:no-repeat;  
+            background-size: cover; 
+            height:100vh !important;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            color: white;
+            float: right;
+            margin: 15px;
+        }
+
+        .weight{
+            font-weight: 900;
+        }
+
+        .thank
+        {
+            margin-top:18vh ;
+        }
+        .cong
+        {
+            margin-bottom: 10vh;
+        }
+        
+
+        
+    .logo{
+        width: 10%;
+        height: 10%;
+        text-align: center;
+    }
+    .logo-row{
+        text-align: center;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <div class ="logo-row">
+        <img style="width: 10%;height: 10%; text-align: center" src = "images/EDC.png" alt="logo" class="logo"> 
+    </div>
+    </div>
+
+    <div class="thank-you-section">
+        <div class="thank-you-message">
+            <div class="cong">
+            <h2 class="weight" style="color:black; font-size:3em ;font-weight:900;font-family: 'Montserrat', sans-serif;font-style: italic;">Congratulations!!! </h2><br>
+            <h2 style="color:rgb(122, 171, 168);">You Have Successfully Completed The Aptitude Test.</h2>
+            <br><h2 style="font-size:1em;color: black;">Your results will be updated to you soon.</h2>
+            </div>
+            
+            <div class="thank">
+            <h4 style="color: white;">Follow Us:</h4>
+            <ul>
+                <li><a href="https://www.instagram.com/edc_tiet/"><img src="{% static 'home/images/instagram.png' %}"></a></li>
+                <li><a href="https://www.facebook.com/edctiet/"><img src="{% static 'home/images/facebook.png' %}"></a></li>
+                <li><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/"><img src="{% static 'home/images/linkedin1.png' %}"></a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+</body>
+</html>

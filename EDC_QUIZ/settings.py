@@ -129,6 +129,6 @@ MEDIA_URL = '/media/'
 AUTH_USER_MODEL = 'home.User'
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'questions'
+LOGIN_REDIRECT_URL = 'instructions'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
