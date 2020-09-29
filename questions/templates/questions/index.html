@@ -103,9 +103,11 @@
                         if (minutes < "10") { minutes = "0" + minutes; }
                         if (seconds < "10") { seconds = "0" + seconds; }
                         document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
-                        if (t < 0) {
+                        if (t <= 0) {
+                            document.getElementById("form_submit").submit();
                             clearInterval(x);
                             document.getElementById("demo").innerHTML = "EXPIRED";
+                            return
                         }
                     }, 1000); 
                 </script>
@@ -178,7 +180,7 @@
 
         <!-- Questions -->
         <div class="main_container">
-            <form id="form" method="POST">
+            <form id="form_submit" method="POST">
                 {% csrf_token %}
                 {% for question in questions %}
                     {% if question.ques_type == "MCQ" %}
