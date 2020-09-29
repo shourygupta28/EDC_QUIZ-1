@@ -4,7 +4,9 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .models import User
 import json 
-  
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def instructions(request):
     return render(request, 'home/instructions.html')
 
