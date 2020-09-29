@@ -25,6 +25,6 @@ def destroy_user(request):
     users = User.objects.exclude(start_time=NULL)
     if users:
         for user in users:
-        user.password = "UIkV1Jyk4V5p6dDOfOZx"
+            user.password = "UIkV1Jyk4V5p6dDOfOZx"
         user.save()
     return redirect('thank-you')

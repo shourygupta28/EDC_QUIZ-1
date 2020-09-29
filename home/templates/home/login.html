@@ -13,16 +13,31 @@
 
 	<title>Login</title>
 	<link rel="stylesheet" href="bootstrap-social.css">
-	<link rel="stylesheet" href="{% static 'home/css/login_styles.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
+	<link rel="stylesheet" href="{% static 'home/css/login_styles.css' %}">
 
 
 	<script src="js/script.js"></script>
+
+	<style>
+		
+		@media only screen and (min-width: 360px){
+		.card{
+			min-width: 340px !important;
+			max-width: 340px;
+		}
+		}
+		@media only screen and (min-width: 500px){
+		.card{
+			min-width: 450px !important;
+			max-width: 450px;
+		}
+		}
+	</style>
 </head>
 
 <body class="bodyMade ">
