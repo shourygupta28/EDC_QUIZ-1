@@ -1,4 +1,5 @@
 from django.db import models
+from home.models import User
 
 class Questions(models.Model):
     ques_type = (('Text', 'Text'),
@@ -30,7 +31,7 @@ class Questions(models.Model):
             return False
 
 class Answer(models.Model):
-    candidate   = models.CharField(default='', max_length=100)
+    candidate   = models.OneToOneField(User, related_name = 'user_ans', on_delete=models.CASCADE, null=True, blank=True)
     answer1     = models.CharField(default='', null=True, max_length=100)
     answer2     = models.CharField(default='', null=True, max_length=100)
     answer3     = models.CharField(default='', null=True, max_length=100)
