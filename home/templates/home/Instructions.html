@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Instructions</title>
+
+	<!-- Bootstrap core CSS -->
+	<!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<!-- Custom styles for this template -->
+	<link href="{% static 'home/css/button.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body {
+			font-family: 'Montserrat', sans-serif;
+            background-color: #1b272e !important;
+            /*background-image: url('./images/thankyou.png') !important;*/
+            background-repeat:no-repeat;  
+            background-size: cover; 
+/**/			color: #37474F;
+		}
+	</style>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+        .instructions {
+            font-size: 60px;
+        }
+        @media (max-width: 700px) {
+            .instructions {
+                font-size: 50px;
+            }
+        }
+        @media (max-width: 450px) {
+            .instructions {
+                font-size: 40px;
+            }
+            ul {
+                font-size: 20px !important;
+                padding-left: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="top_navbar">
+            <div class="top_menu" style="  width: 100%;">
+                <div class="logo">
+                    <img src="{% static 'home/images/EDC-BLACK.png' %}" height="50px" width="50px">
+                    <!-- <i class="fas fa-lightbulb"></i> -->
+                </div>
+                <div></div>
+                <h3>Hi Nishant🙂!</h3>
+
+            </div>
+        </div>
+    </div>
+	<section class="pt100 pb100" style="margin-top: 130px;">
+            <div class="container" style="margin-top: -50px; min-height: 72vh">
+
+                <div class="row justify-content-center" style=" padding: 5% !important;">
+                    <div class="col-lg" style="width: 100%;">
+                        <div class="icon_box_two">
+                            <div style="text-align: justify;">
+                                <p style="padding-top: 1px; padding-left: 50px !important; padding-right: 50px; text-align: justify; font-size:20px; color: #000;">
+                                    <center>
+                                    	<h3 class="instructions" style="color: #aeebe7; font-weight: 900; text-align: center;">INSTRUCTIONS</h3>
+                                    </center>
+                                    <br><br><br>
+                                    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                        <ul style="font-size: 25px;
+                                                        color: #aeebe7;
+                                                        line-height: 30px;
+                                                        letter-spacing: 1px;
+                                                        list-style-type: circle !important;">
+                                            <li style="list-style-type: disc !important;">The following aptitude test consists of 15 questions.</li>
+                                            <li style="list-style-type: disc !important;">You have to answer the questions present within the allotted time of 20 minutes.</li>
+                                            <li style="list-style-type: disc !important;">There is no negative marking for wrong answers.</li>
+                                            <li style="list-style-type: disc !important;">You can only appear once for this test.</li>
+                                            <li style="list-style-type: disc !important;">Any errors caused due to network failures are not the responsibility of EDC, TIET.</li>
+                                        </ul>
+                                    <br>
+                                    <p style="font-size: 25px;
+                                                    color: #aeebe7;
+                                                    line-height: 30px;
+                                                    letter-spacing: 1px;">If there are any technical issues feel free to mail us at <span style="font-weight: 600;"> recruitments@edctiet.com</span>
+                                  	</p>
+                                                                        </div>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+	            <section class="content yobject-marked">
+					<div class="box bg-1">
+						<a href="{% url 'questions' %}" class="button button--ujarak button--border-thin button--text-thick" style="font-size: 15px;">Start Test</a>
+					</div>
+				</section>
+            </center>
+       
+            <div style="display: flex; flex-direction: row; justify-content: center; margin-top: 50px; width: 100%; background-color: black !important;" >
+                <div style="margin-right: 5vw; margin-left: 5vw; padding: 5px;"><a href="https://www.instagram.com/edc_tiet/">
+                    <i class="fab fa-instagram" style="color: white; font-size: 50px;"></i></a></div>
+                <div style="margin-right: 5vw; margin-left: 5vw; padding: 5px;"><a href="https://www.facebook.com/edctiet/">
+                    <i class="fab fa-facebook-f" style="color: white; font-size: 50px;"></i></a></div>
+                <div style="margin-right: 5vw; margin-left: 5vw; padding: 5px;"><a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/">
+                    <i style="color: white; font-size: 50px;" class="fab fa-linkedin-in"></i></div>   
+
+        </section>
+</body>
+
+</html>
