@@ -257,12 +257,17 @@
         $('input[type=radio]').click(function () {
             if (this.previous) {
                 this.checked = false;
+                var index = '#title' + this.name.substring(6);
+                $(index).css("background-color", "#F8F9FA");
+                $(index + ' span').css("color", "#7aaba8");
             }
             this.previous = this.checked;
+            if(this.checked) {
+                var index = '#title' + this.name.substring(6);
+                $(index).css("background-color", "green");
+                $(index + ' span').css("color", "white");
+            }
 
-            var index = '#title' + this.name.substring(6);
-            $(index).css("background-color", "green");
-            $(index + ' span').css("color", "white");
         });
 
         {% for question in questions %}
