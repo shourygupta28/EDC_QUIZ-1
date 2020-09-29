@@ -5,10 +5,7 @@ from django.conf.urls.static import static
 from .views import question
 
 urlpatterns = [
-    
-    # path('login/', 	auth_views.LoginView.as_view(template_name='questions/login.html'),	name='login'),
     path('questions/', question, name='questions')
-
 ]
 
 if settings.DEBUG: 

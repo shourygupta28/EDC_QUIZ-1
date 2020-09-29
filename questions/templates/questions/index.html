@@ -84,14 +84,14 @@
 
             <!-- Hi User and Timer -->
             <div class="top_menu">
-                <h3>Hi Tanya!</h3>
+                <h3>Hi {{ user.name }}!</h3>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <h3 id="demo"></h3>
                     </li>
                 </ul>
                 <script>
-                    var deadline = new Date("Sept 29, 2020 15:37:25").getTime();
+                    var deadline = new Date("{{end_time}}").getTime();
                     var x = setInterval(function () {
                         var now = new Date().getTime();
                         var t = deadline - now;
