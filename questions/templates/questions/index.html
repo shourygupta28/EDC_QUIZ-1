@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>EDC Quiz</title>
-    
+
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-    
+
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    
+
     <script>
         $(document).ready(function () {
             $(".hamburger").click(function () {
@@ -71,7 +71,7 @@
 </head>
 
 <body>
-    
+
     <div class="wrapper">
         <!-- Navbar -->
         <div class="top_navbar">
@@ -109,7 +109,7 @@
                             document.getElementById("demo").innerHTML = "EXPIRED";
                             return
                         }
-                    }, 1000); 
+                    }, 1000);
                 </script>
             </div>
         </div>
@@ -222,7 +222,7 @@
                             </div>
                         </div>
                     </div>
-                
+
                     {% else %}
 
                     <div id="q{{ question.ques_no }}" class="container question-section ">
@@ -244,6 +244,7 @@
                                 {% endif %}
                                 {% if question.ques_no == 15 %}
                                     <input type="submit" class="btn btn-primary">
+                                {%endif%}
                             </div>
                         </div>
                     </div>
@@ -253,7 +254,7 @@
             </form>
         </div>
     </div>
-    
+
     <script>
         $('input[type=radio]').click(function () {
             if (this.previous) {
