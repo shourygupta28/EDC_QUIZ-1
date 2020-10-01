@@ -48,6 +48,9 @@ class Answer(models.Model):
     answer14    = models.TextField(default='', null=True, max_length=100)
     answer15    = models.TextField(default='', null=True, max_length=100)
 
-    # def __str__(self):
-    #     return self.candidate + " - " + self.answer1 + " - " + self.answer2
+    def __getattribute__(self, key):
+        print(f"\n__getattribute__ invoked on Student with key {key}")
 
+        v = super(Answer, self).__getattribute__(key)
+        print(v)
+        return v

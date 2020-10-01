@@ -11,11 +11,12 @@ class CustomUserManager(BaseUserManager):
         return user
 
 class User(AbstractUser):
-    username = None
-    email = models.EmailField(verbose_name='Email Address', unique=True)
-    name = models.CharField(max_length=100)
-    slot  = models.IntegerField(default=0)
-    start_time = models.DateTimeField(null=True)
+    username    = None
+    email       = models.EmailField(verbose_name='Email Address', unique=True)
+    name        = models.CharField(max_length=100)
+    slot        = models.IntegerField(default=0)
+    start_time  = models.DateTimeField(null=True, blank=True)
+    points      = models.IntegerField(default=0)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
